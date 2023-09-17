@@ -1,0 +1,17 @@
+C:\ISteak2\Back\ISteak\ISteak.Repositories\bin\Debug\net6.0\ISteak.Repositories.deps.json
+C:\ISteak2\Back\ISteak\ISteak.Repositories\bin\Debug\net6.0\ISteak.Repositories.dll
+C:\ISteak2\Back\ISteak\ISteak.Repositories\bin\Debug\net6.0\ISteak.Repositories.pdb
+C:\ISteak2\Back\ISteak\ISteak.Repositories\bin\Debug\net6.0\ISteak.Commons.dll
+C:\ISteak2\Back\ISteak\ISteak.Repositories\bin\Debug\net6.0\ISteak.Core.dll
+C:\ISteak2\Back\ISteak\ISteak.Repositories\bin\Debug\net6.0\ISteak.Core.pdb
+C:\ISteak2\Back\ISteak\ISteak.Repositories\bin\Debug\net6.0\ISteak.Commons.pdb
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.csproj.AssemblyReference.cache
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.AssemblyInfoInputs.cache
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.AssemblyInfo.cs
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.csproj.CoreCompileInputs.cache
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.csproj.CopyComplete
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.dll
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\refint\ISteak.Repositories.dll
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ISteak.Repositories.pdb
+C:\ISteak2\Back\ISteak\ISteak.Repositories\obj\Debug\net6.0\ref\ISteak.Repositories.dll
