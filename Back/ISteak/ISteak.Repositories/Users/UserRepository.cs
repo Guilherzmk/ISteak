@@ -99,9 +99,37 @@ namespace ISteak.Repositories.Users
 
             return user;
         }
-        public Task<User> Get(string accessKey)
+        public async Task<User> Get(string accessKey)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var commandText = new StringBuilder()
+                .AppendLine(" SELECT * FROM [User]")
+                .AppendLine(" WHERE [access_key] = @access_key");
+
+                using var connection = new SqlConnection(_connectionProvider.ConnectionString);
+                connection.Open();
+                var cm = connection.CreateCommand();
+
+                cm.CommandText = commandText.ToString();
+
+                cm.Parameters.Add(new SqlParameter("@access_key", accessKey));
+
+                var dataReader = cm.ExecuteReader();
+
+                User user = null;
+
+                while (dataReader.Read())
+                {
+                    user = LoadDataReader(dataReader);
+                }
+
+                return user;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public Task<User> Get(Guid id)

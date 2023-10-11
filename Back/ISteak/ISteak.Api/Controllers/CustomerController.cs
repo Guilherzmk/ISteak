@@ -1,4 +1,5 @@
 ﻿using ISteak.Core.Customer;
+using ISteak.Services.Customers;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -34,6 +35,91 @@ namespace ISteak.Api.Controllers
             }
 
             return this.Ok(customer);
+        }
+
+        [HttpPost]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] Customer updateParams)
+        {
+            var customer = await _customerService.UpdateAsync(id, updateParams);
+
+            if (_customerService.HasErrors())
+            {
+                var sb = new StringBuilder();
+                foreach (var error in _customerService.Errors)
+                {
+                    sb.AppendLine(error.Text);
+                }
+                return BadRequest("erro");
+                throw new Exception(sb.ToString());
+            }
+
+            return this.Ok(customer);
+        }
+
+
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetAsync([FromRoute] Guid id)
+        {
+            var customer = await _customerService.GetAsync(id);
+
+            if (_customerService.HasErrors())
+            {
+                var sb = new StringBuilder();
+                foreach (var error in _customerService.Errors)
+                {
+                    sb.AppendLine(error.Text);
+                }
+                return BadRequest();
+                throw new Exception(sb.ToString());
+            }
+
+            return this.Ok(customer);
+
+        }
+
+        [HttpGet]
+        [Route("")]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var customers = await _customerService.GetAllAsync();
+
+            if (_customerService.HasErrors())
+            {
+                var sb = new StringBuilder();
+                foreach (var error in _customerService.Errors)
+                {
+                    sb.AppendLine(error.Text);
+                }
+                return BadRequest();
+                throw new Exception(sb.ToString());
+            }
+
+            return this.Ok(customers);
+
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeleteAsync([FromRoute] Guid id)
+        {
+            await _customerService.DeleteAsync(id);
+
+            if (_customerService.HasErrors())
+            {
+                var sb = new StringBuilder();
+                foreach (var error in _customerService.Errors)
+                {
+                    sb.AppendLine(error.Text);
+                }
+                return BadRequest();
+                throw new Exception(sb.ToString());
+            }
+
+            return this.Ok();
+
         }
 
     }
