@@ -28,6 +28,12 @@ namespace ISteak.Core.Products
         public string? ExclusionUserName { get; set;}
         public int? RecordStatus { get; set; }
         public string? RecordStatusName { get; set; }
+
+        public Product()
+        {
+            Id = Guid.NewGuid();
+        }
+
     }
 }
 

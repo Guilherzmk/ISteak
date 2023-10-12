@@ -1,10 +1,13 @@
 ﻿using ISteak.Api;
 using ISteak.Core.Customer;
+using ISteak.Core.Products;
 using ISteak.Core.User;
 using ISteak.Repositories.Customers;
+using ISteak.Repositories.Products;
 using ISteak.Repositories.Shared.Sql;
 using ISteak.Repositories.Users;
 using ISteak.Services.Customers;
+using ISteak.Services.Products;
 using ISteak.Services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -58,9 +61,11 @@ builder.Services.AddTransient<SqlConnectionProvider>(_ => new SqlConnectionProvi
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
 builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 
 

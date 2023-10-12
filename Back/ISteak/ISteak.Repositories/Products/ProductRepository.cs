@@ -29,7 +29,7 @@ namespace ISteak.Repositories.Products
               .AppendLine(" [code],")
               .AppendLine(" [name],")
               .AppendLine(" [note],")
-              .AppendLine(" [price],")
+              .AppendLine(" [preco],")
               .AppendLine(" [status_code],")
               .AppendLine(" [status_name],")
               .AppendLine(" [quantity],")
@@ -44,7 +44,31 @@ namespace ISteak.Repositories.Products
               .AppendLine(" [exclusion_user_id],")
               .AppendLine(" [exclusion_user_name],")
               .AppendLine(" [record_status],")
-              .AppendLine(" [record_status_name]");
+              .AppendLine(" [record_status_name]")
+              .AppendLine(" )")
+              .AppendLine(" VALUES")
+              .AppendLine(" (")
+              .AppendLine(" @id,")
+              .AppendLine(" @code,")
+              .AppendLine(" @name,")
+              .AppendLine(" @note,")
+              .AppendLine(" @price,")
+              .AppendLine(" @status_code,")
+              .AppendLine(" @status_name,")
+              .AppendLine(" @quantity,")
+              .AppendLine(" @image,")
+              .AppendLine(" @creation_date,")
+              .AppendLine(" @creation_user_id,")
+              .AppendLine(" @creation_user_name,")
+              .AppendLine(" @change_date,")
+              .AppendLine(" @change_user_id,")
+              .AppendLine(" @change_user_name,")
+              .AppendLine(" @exclusion_date,")
+              .AppendLine(" @exclusion_user_id,")
+              .AppendLine(" @exclusion_user_name,")
+              .AppendLine(" @record_status,")
+              .AppendLine(" @record_status_name")
+              .AppendLine(" )");
 
             using var connection = new SqlConnection(_connectionProvider.ConnectionString);
             connection.Open();
@@ -114,7 +138,7 @@ namespace ISteak.Repositories.Products
             cm.Parameters.Add(new SqlParameter("@creation_date", product.CreationDate.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@creation_user_id", product.CreationUserId.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@creation_user_name", product.CreationUserName.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@chage_date", product.ChangeDate.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@change_date", product.ChangeDate.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@change_user_id", product.ChangeUserId.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@change_user_name", product.ChangeUserName.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@exclusion_date", product.ExclusionDate.GetDbValue()));
@@ -122,10 +146,6 @@ namespace ISteak.Repositories.Products
             cm.Parameters.Add(new SqlParameter("@exclusion_user_name", product.ExclusionUserName.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@record_status", product.RecordStatus.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@record_status_name", product.RecordStatusName.GetDbValue()));
-
-
-
-
         }
     }
 }
