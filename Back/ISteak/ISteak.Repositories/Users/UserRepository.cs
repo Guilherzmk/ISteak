@@ -83,6 +83,12 @@ namespace ISteak.Repositories.Users
 
             cm.Parameters.Add(new SqlParameter("@code", InsertCode()));
             cm.Parameters.Add(new SqlParameter("@password", password));
+            cm.Parameters.Add(new SqlParameter("@profile_id", "3FA85F64-5717-4562-B3FC-2C963F66AFA6"));
+            cm.Parameters.Add(new SqlParameter("@profile_name", "Admin"));
+            cm.Parameters.Add(new SqlParameter("@access_count", 1));
+            cm.Parameters.Add(new SqlParameter("@creation_date", DateTime.UtcNow));
+            cm.Parameters.Add(new SqlParameter("@creation_user_id", user.Id));
+            cm.Parameters.Add(new SqlParameter("@creation_user_name", user.Name));
 
             SetParameters(user, cm);
 
@@ -144,13 +150,7 @@ namespace ISteak.Repositories.Users
             cm.Parameters.Add(new SqlParameter("@access_key", user.AccessKey.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@email", user.Email.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@phone", user.Phone.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@profile_id", user.ProfileId.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@profile_name", user.ProfileName.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@access_count", user.AccessCount.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@note", user.Note.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@creation_date", user.CreationDate.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@creation_user_id", user.CreationUserId.GetDbValue()));
-            cm.Parameters.Add(new SqlParameter("@creation_user_name", user.CreationUserName.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@change_date", user.ChangeDate.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@change_user_id", user.ChangeUserId.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@change_user_name", user.ChangeUserName.GetDbValue()));

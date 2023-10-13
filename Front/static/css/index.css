@@ -1,0 +1,61 @@
+#img-logo{
+    width: 130px;
+}
+
+#text-isteak{
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+   justify-content: center;
+   border-bottom: 2px solid #F04242;
+    
+}
+
+#imgadm{
+    float: left;
+    width: 350px;
+    justify-content: center;
+    margin-left: 10rem;
+
+}
+
+
+
+#cxstatus {
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 20px;
+    width: 40%;
+    float: left;
+    margin-left: 5rem;
+     margin-top: 2rem;
+}
+
+#cxuser {
+    border: 2px solid black;
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+    width: auto;
+    float: right;
+    border-radius: 20px;
+    box-shadow:  10px 5px 5px #F04242;
+}
+
+#cnxon{
+    color: green;
+    margin-left: 4rem;
+    font-style: oblique;
+    font-size: 25px;
+    
+}
+#cnxoff{
+    color: red;
+    margin-left: 4rem;
+    font-style: oblique;
+    font-size: 25px;
+}

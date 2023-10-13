@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+ 
+*{
+    font-family:  'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    padding-top: 50px;
+   
+}
+#divone{
+    align-items: center;
+    display: flex;
+    justify-content:space-between;
+    margin: 15px;
+}
+#divone h2{
+    font-size: 40px;
+}
+
+#divone button{
+    border: none;
+    background-color: #F04242;
+    padding: 7px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.336);
+}
+#divone button:hover{
+    transform: scale(1.05);
+    background-color: #e97b7b;
+}
+.cardprim{
+    align-items: center;
+   display: flex;
+   justify-content: space-around;
+}
+.card{
+    margin-bottom: 15px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+   
+}
+.card-body2{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    margin: 8px;
+}
+.card-body2 button{
+    border: none;
+    width: 100px;
+    background-color: #F04242;
+    color: white;
+    padding: 4.5px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.336);
+}
+.card-body2 button:hover{
+    transform: scale(1.05);
+    background-color: #e97b7b;
+}
+.modal-footer button{
+    border: none;
+    width: 100px;
+    background-color: #F04242;
+    color: white;
+    padding: 4.5px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.336);
+}
+.modal-footer button:hover{
+    transform: scale(1.05);
+    background-color: #e97b7b;
+}
+.modal-body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#inputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+.input_box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input_box input {
+    margin: 0.2rem 0;
+    padding: 0.6rem 1rem;
+    border: 1px solid #F04242;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input_box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input_box input:focus-visible {
+    outline: 2px solid #F04242;
+}
+
+
+
+.input_box input::placeholder {
+    color: #F04242;
+}
+.select{
+    margin: 0.2rem 0;
+    padding: 0.6rem 1rem;
+    border: 1px solid #F04242;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+.select input:focus-visible {
+    outline: 2px solid #F04242 !important;
+}
+.select input:hover {
+    background-color: #eeeeee75;
+}
+.icon-filter{
+ justify-content: end;
+display: flex;
+align-items: end;
+margin-right: 20px;
+
+}
+
+.id{
+    display:none;
+}

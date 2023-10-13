@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../../static/css/login.css" />
+    <script src="../../static/javascript/login.js"></script>
+  </head>
+  <body>
+    <main id="container">
+      <div class="cadastro">
+        <h2>Não possue cadastro?</h2>
+        <img src="../../static/images/cadastro.png" alt="" />
+        <button type="submit" id="btn-cadastro">
+          <a href="../cadastro/">Cadastre-se</a>
+        </button>
+      </div>
+
+      <form id="login_form">
+        <div id="form_header">
+          <h1>Login</h1>
+          <img src="../../static/images/logo_red.png" alt="" />
+        </div>
+        <div id="inputs">
+          <div class="input_box">
+            <label for="email"
+              >Email
+              <div class="input_field">
+                <i><ion-icon name="person-outline"></ion-icon></i>
+                <input type="text" id="email" name="email" required />
+              </div>
+            </label>
+          </div>
+
+          <div class="input_box">
+            <label for="password"
+              >Senha
+              <div class="input_field">
+                <i><ion-icon name="key-outline"></ion-icon></i>
+                <input type="password" id="password" name="password" required />
+              </div>
+            </label>
+          </div>
+        </div>
+        <button type="submit" id="login_button">
+          <a>Entrar</a>
+        </button>
+      </form>
+    </main>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="../../static/css/configurações.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <nav  class="navbar fixed-top" style="background-color: #F04242; " >
+        <div class="container-fluid"  style="display: block;">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style=" border: 2px solid black; box-shadow: none;">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="font-family: 'Times New Roman', Times, serif; font-size: x-large;">iSteak</a>
+          <div  style="background-color: #F04242;" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div style="color: white;" class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img width="30%" src="../static/images/logonova.png" alt="">iSteak</h5>
+              <button  type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <div class="offcanvas-body">
+              <ul  class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="dashboard"><ion-icon  name="home-outline"></ion-icon>  Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="loja"><ion-icon name="storefront-outline"></ion-icon>  Loja</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="pedidos"><ion-icon name="paper-plane-outline"></ion-icon> Pedidos </a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="estatistica"><ion-icon name="bar-chart-outline"></ion-icon>  Estatísticas</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="histpedidos"><ion-icon name="receipt-outline"></ion-icon>  Histórico</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="configuracoes"><ion-icon name="settings-outline"></ion-icon>  Configurações</a>
+                </li>
+                <li class="nav-item">
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="/"><ion-icon name="arrow-back-circle-outline"></ion-icon>  Sair</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav> 
+
+      <main>
+        <div id="txt_slv">
+          <h1>Configurações</h1>
+          <button id="salvar">Salvar Alterações</button>
+        </div>
+          <div id="cnfg_prin">
+                <div id="cnfg_st">
+                    <h3>Status da loja</h3>
+                    <p>Desativado
+                      <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                    Ativado
+                    </p>
+                </div>
+                <div id="cnfg_st">
+                  <h3>Horarios de Funcionamento</h3>
+                  <p>
+                    <button id="btn_seta" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      <ion-icon style="color: black;" name="caret-down-outline"></ion-icon>
+                    </button>
+                  </p>
+              </div>
+              <div class="collapse" id="collapseExample">
+                <div id="div1" class="card card-body">
+                  <ul>
+                    <li>Segunda-Feira
+                      <div> Das
+                      <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                        ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                    </div>
+                    </li>
+                    <li>Terça-Feira
+                      <div> Das
+                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                      </div>
+                    </li>
+                    <li>Quarta-Feira
+                      <div> Das
+                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                          ás <input  id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                      </div>
+                    </li>
+                    <li>Quinta-Feira
+                      <div> Das
+                        <input id="input_days" type="text" size="1">:<input  id="input_days" type="text" size="1">
+                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                      </div>
+                    </li>
+                    <li>Sexta-Feira
+                      <div> Das
+                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                      </div>
+                    </li>
+                    <li>Sábado
+                      <div> Das
+                        <input id="input_days"  type="text" size="1">:<input id="input_days" type="text" size="1">
+                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                      </div>
+                    </li>
+                    <li>Domingo
+                      <div> Das
+                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div> 
+              <div id="pagamentos">
+              <div id="fms_pag">
+                <h2 >Formas de Pagamento</h2>
+              </div>
+                <div id="cnfg_pag">
+                  <h3>Dinheito</h3>
+                  <p>Desativado
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                  Ativado</p>
+                </div>
+                <div id="cnfg_pag">
+                  <h3>Pix</h3>
+                  <p>Desativado
+                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                  Ativado</p>
+                </div>
+                <div id="cnfg_pag">
+                  <h3>Taxa de Entrega</h3>
+                  <input id="input_tx" type="text" size="7">
+                  
+                </div>
+              </div>
+              <div id="infGr">
+                    <div id="infG">
+                      <h2>Informações Gerais</h2>
+                    </div>
+                    <div class="input_boxC">
+                      <div>
+                        <label for="password"> Nome da Loja
+                          <div class="input_fieldC">
+                              <input type="name" id="name" name="name">
+                          </div>
+                        </label>
+                      </div>
+                      <div>
+                        <label for="password"> Razão Social
+                          <div class="input_fieldC">
+                              <input type="name" id="name" name="name">
+                          </div>
+                        </label>
+                      </div>
+                      <div>
+                        <label for="password"> Nome Fantasia
+                          <div class="input_fieldC">
+                              <input type="name" id="name" name="name">
+                          </div>
+                        </label>
+                      </div>
+                      <div>
+                      <label for="password"> CNPJ
+                        <div class="input_fieldC">
+                            <input type="name" id="name" name="name">
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+              </div>
+              <div id="infend">
+                <div id="endereco">
+                  <h2>Endereço da Loja</h2>
+                </div>
+                <div class="input_boxC">
+                  <div>
+                    <label for="password"> CEP
+                      <div class="input_fieldC">
+                          <input type="name" id="name" name="name">
+                      </div>
+                    </label>
+                  </div>
+                  <div>
+                    <label for="password"> Rua
+                      <div class="input_fieldC">
+                          <input type="name" id="name" name="name">
+                      </div>
+                    </label>
+                  </div>
+                  <div>
+                    <label for="password"> Número
+                      <div class="input_fieldC">
+                          <input type="name" id="name" name="name">
+                      </div>
+                    </label>
+                  </div>
+                  <div>
+                  <label for="password"> Cidade
+                    <div class="input_fieldC">
+                        <input type="name" id="name" name="name">
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <label for="password"> Bairro
+                    <div class="input_fieldC">
+                        <input type="name" id="name" name="name">
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <label for="password"> Estado
+                    <div class="input_fieldC">
+                        <input type="name" id="name" name="name">
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <label for="password"> Complemento 
+                    <div class="input_fieldC">
+                        <input type="name" id="name" name="name">
+                    </div>
+                  </label>
+                </div>
+              </div>
+          </div>
+          </div>
+      </main>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</html>

@@ -35,19 +35,43 @@ namespace ISteak.Services.Products
             }
         }
 
-        public Task<int> DeleteAsync(Guid id)
+        public async Task<int> DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var product = await _productRepository.DeleteAsync(id);
+
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
         }
 
-        public Task<Product> GetAsync(Guid id)
+        public async Task<Product> UpdateAsync(Guid id, Product @params)
         {
-            throw new NotImplementedException();
+            var model = await this._productRepository.GetAsync(id);
+
+            await model.UpdateAsync(@params);
+
+            await this._productRepository.UpdateAsync(model);
+
+            return model;
         }
 
-        public Task<Product> UpdateAsync(Guid id, Product @params)
+        public async Task<List<Product>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var model = await _productRepository.GetAllAsync();
+
+            return model;
+        }
+
+        public async Task<Product> GetAsync(Guid id)
+        {
+            var product = await this._productRepository.GetAsync(id);
+
+            return product;
         }
     }
 }

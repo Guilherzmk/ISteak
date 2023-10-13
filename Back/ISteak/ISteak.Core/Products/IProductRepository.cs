@@ -12,6 +12,6 @@ namespace ISteak.Core.Products
         Task<Product> UpdateAsync(Product customer);
         Task<long> DeleteAsync(Guid id);
         Task<Product> GetAsync(Guid id);
-        Task<Product> GetAllAsync();
+        Task<List<Product>> GetAllAsync();
     }
 }

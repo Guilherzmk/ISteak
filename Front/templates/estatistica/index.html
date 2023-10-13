@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatistica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="../static/css/estatistica.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/estatistica.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <nav class="navbar fixed-top" style="background-color: #F04242; ">
+    <div class="container-fluid" style="display: block;">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation"
+        style=" border: 2px solid black; box-shadow: none;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"
+        style="font-family: 'Times New Roman', Times, serif; font-size: x-large;">iSteak</a>
+      <div style="background-color: #F04242;" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div style="color: white;" class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img width="30%" src="../static/images/logonova.png"
+              alt="">iSteak</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="dashboard"><ion-icon
+                    name="home-outline"></ion-icon> Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="loja"><ion-icon
+                    name="storefront-outline"></ion-icon> Loja</a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="pedidos"><ion-icon
+                    name="paper-plane-outline"></ion-icon> Pedidos </a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="estatistica"><ion-icon
+                    name="bar-chart-outline"></ion-icon> Estatísticas</a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="histpedidos"><ion-icon
+                    name="receipt-outline"></ion-icon> Histórico</a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="configuracoes"><ion-icon
+                    name="settings-outline"></ion-icon> Configurações</a>
+              </li>
+              <li class="nav-item">
+                <a style="color: white;" class="nav-link active" aria-current="page" href="/"><ion-icon
+                    name="arrow-back-circle-outline"></ion-icon> Sair</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div id="img_grafc">
+            <h2>Star Rating</h2> <!--https://www.w3schools.com/howto/howto_css_star_rating.asp-->
+            <span class="fa fa-star checked"></span> <!--Aumentar essas estrelas pra ficarem maiores-->
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <h3> 3/5</h3>
+          </div>
+        </div>
+        <div class="col" id="margin_left">
+          <div id="img_grafc"> <!--chart.js-->
+            <h2> Vendas por dia</h2>
+            <canvas id="diavendas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 4rem;">
+      <div class="row">
+        <div class="col">
+          <div id="img_grafc">
+            <h2>Lucro da Jornada:</h2>
+            <h3>R$201,32</h3>
+          </div>
+        </div>
+        <div class="col" style="text-align: center;">
+          <h2>Clientes registrados no App:</h2>
+          <h3 style="color: red;"><u>30 Clientes</u></h3>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 6rem; margin-bottom: 3rem;">
+      <h2 style="text-align: center;">Venda e estoque de produtos</h2>
+      <canvas id="vendaestoque"></canvas>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+  //ler a documentação pra entender o data e options desses gráficos
+  const diavendas = document.getElementById('diavendas');
+  const vendaestoque = document.getElementById("vendaestoque");
+
+  new Chart(diavendas, {
+    type: 'line',
+    data: {
+      labels: ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+      datasets: [
+        {
+          label: 'Picos de venda',
+          data: [10, 20, 5, 30, 25, 40],  // Substitua esses valores pelos seus dados
+          borderColor: 'red',
+          backgroundColor: 'rgba(255, 0, 0, 0.5)',
+          pointStyle: 'circle',
+          pointRadius: 10,
+          pointHoverRadius: 15
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: {
+          display: true,
+        }
+      }
+    }
+  });
+
+  new Chart(vendaestoque, {
+    type: 'bar',
+    data: {
+      labels: ["Carne1", "Ave1", "Suino1", "Carne2", "Ave2", "Novilho1"],
+      datasets: [
+        {
+          label: "Vendas",
+          data: Array.from({ length: 6 }, () => Math.floor(Math.random() * 51)),
+          backgroundColor: 'rgba(255, 0, 0, 0.5)',
+        },
+        {
+          label: "Estoque",
+          data: Array.from({ length: 6 }, () => Math.floor(Math.random() * 51)),
+          backgroundColor: 'rgba(20, 153, 255, 0.5)',//Aqui está valores aleatorios no Math Random
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        x: {
+          beginAtZero: true,
+        }
+      }
+    }
+  });
+</script>
+
+</html>
