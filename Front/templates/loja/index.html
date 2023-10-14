@@ -27,22 +27,22 @@
         <div class="offcanvas-body">
           <ul  class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="dashboard"><ion-icon  name="home-outline"></ion-icon>  Inicio</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../dashboard/"><ion-icon  name="home-outline"></ion-icon>  Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="loja"><ion-icon name="storefront-outline"></ion-icon>  Loja</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../loja/"><ion-icon name="storefront-outline"></ion-icon>  Loja</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="pedidos"><ion-icon name="paper-plane-outline"></ion-icon> Pedidos </a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../pedidos/"><ion-icon name="paper-plane-outline"></ion-icon> Pedidos </a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="estatistica"><ion-icon name="bar-chart-outline"></ion-icon>  Estatísticas</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../estatistica/"><ion-icon name="bar-chart-outline"></ion-icon>  Estatísticas</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="histpedidos"><ion-icon name="receipt-outline"></ion-icon>  Histórico</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../historico_pds/"><ion-icon name="receipt-outline"></ion-icon>  Histórico</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="configuracoes"><ion-icon name="settings-outline"></ion-icon>  Configurações</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../configuracoes/"><ion-icon name="settings-outline"></ion-icon>  Configurações</a>
                 </li>
                 <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="/"><ion-icon name="arrow-back-circle-outline"></ion-icon>  Sair</a>
@@ -102,11 +102,11 @@
                       <div class="input_field">
                           <select class="select" name="categorie" id="categorie">
                               <option value="valor0"></option>
-                              <option value="Bovinos">Bovinos</option>
-                              <option value="Pescados">Pescados</option>
-                              <option value="Suinos">Suínos</option>
-                              <option value="Churrasco">Churrasco</option>
-                              <option value="Pescados">Pescados</option>
+                              <option value="bovinos">Bovinos</option>
+                              <option value="pescados">Pescados</option>
+                              <option value="suinos">Suínos</option>
+                              <option value="churrasco">Churrasco</option>
+                              <option value="aves">Aves</option>
                           </select>
                       </div>
                   </label>
@@ -121,7 +121,7 @@
           </div>
             <div class="modal-footer">
               <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary" onclick="Create()">Salvar</button>
+              <button type="submit" class="btn btn-primary" onclick="Create(); reloadPage()">Salvar</button>
             </div>
           </form>
         </div>

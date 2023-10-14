@@ -24,22 +24,22 @@
             <div class="offcanvas-body">
               <ul  class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="dashboard"><ion-icon  name="home-outline"></ion-icon>  Inicio</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../dashboard/"><ion-icon  name="home-outline"></ion-icon>  Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="loja"><ion-icon name="storefront-outline"></ion-icon>  Loja</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../loja/"><ion-icon name="storefront-outline"></ion-icon>  Loja</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="pedidos"><ion-icon name="paper-plane-outline"></ion-icon> Pedidos </a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../pedidos/"><ion-icon name="paper-plane-outline"></ion-icon> Pedidos </a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="estatistica"><ion-icon name="bar-chart-outline"></ion-icon>  Estatísticas</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../estatistica/"><ion-icon name="bar-chart-outline"></ion-icon>  Estatísticas</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="histpedidos"><ion-icon name="receipt-outline"></ion-icon>  Histórico</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../historico_pds/"><ion-icon name="receipt-outline"></ion-icon>  Histórico</a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;"  class="nav-link active" aria-current="page" href="configuracoes"><ion-icon name="settings-outline"></ion-icon>  Configurações</a>
+                  <a style="color: white;"  class="nav-link active" aria-current="page" href="../configuracoes/"><ion-icon name="settings-outline"></ion-icon>  Configurações</a>
                 </li>
                 <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="/"><ion-icon name="arrow-back-circle-outline"></ion-icon>  Sair</a>
@@ -63,84 +63,6 @@
                     Ativado
                     </p>
                 </div>
-                <div id="cnfg_st">
-                  <h3>Horarios de Funcionamento</h3>
-                  <p>
-                    <button id="btn_seta" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      <ion-icon style="color: black;" name="caret-down-outline"></ion-icon>
-                    </button>
-                  </p>
-              </div>
-              <div class="collapse" id="collapseExample">
-                <div id="div1" class="card card-body">
-                  <ul>
-                    <li>Segunda-Feira
-                      <div> Das
-                      <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                        ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                    </div>
-                    </li>
-                    <li>Terça-Feira
-                      <div> Das
-                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                      </div>
-                    </li>
-                    <li>Quarta-Feira
-                      <div> Das
-                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                          ás <input  id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                      </div>
-                    </li>
-                    <li>Quinta-Feira
-                      <div> Das
-                        <input id="input_days" type="text" size="1">:<input  id="input_days" type="text" size="1">
-                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                      </div>
-                    </li>
-                    <li>Sexta-Feira
-                      <div> Das
-                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                      </div>
-                    </li>
-                    <li>Sábado
-                      <div> Das
-                        <input id="input_days"  type="text" size="1">:<input id="input_days" type="text" size="1">
-                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                      </div>
-                    </li>
-                    <li>Domingo
-                      <div> Das
-                        <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                          ás <input id="input_days" type="text" size="1">:<input id="input_days" type="text" size="1">
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div> 
-              <div id="pagamentos">
-              <div id="fms_pag">
-                <h2 >Formas de Pagamento</h2>
-              </div>
-                <div id="cnfg_pag">
-                  <h3>Dinheito</h3>
-                  <p>Desativado
-                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
-                  Ativado</p>
-                </div>
-                <div id="cnfg_pag">
-                  <h3>Pix</h3>
-                  <p>Desativado
-                    <label class="switch"><input type="checkbox"><span class="slider"></span></label>
-                  Ativado</p>
-                </div>
-                <div id="cnfg_pag">
-                  <h3>Taxa de Entrega</h3>
-                  <input id="input_tx" type="text" size="7">
-                  
-                </div>
-              </div>
               <div id="infGr">
                     <div id="infG">
                       <h2>Informações Gerais</h2>

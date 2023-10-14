@@ -1,6 +1,7 @@
 ﻿using ISteak.Core.Customer;
 using ISteak.Core.Products;
 using ISteak.Services.Customers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
 
@@ -80,6 +81,7 @@ namespace ISteak.Api.Controllers
 
         [HttpGet]
         [Route("")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllAsync()
         {
             var customers = await _productService.GetAllAsync();
