@@ -153,3 +153,33 @@ margin-right: 20px;
 .id{
     display:none;
 }
+
+#content-table thead tr {
+    font-weight: bold;
+    background-color: lightgray;
+    /* Cor de fundo para destaque */
+  }
+
+  #content-table thead tr th {
+    padding: 10px 20px;
+    /* Espaçamento interno */
+    border-right: 1px solid black;
+    /* Adicionando borda à direita */
+  }
+
+  #content-table thead tr th:last-child {
+    border-right: none;
+    /* Removendo borda à direita do último elemento */
+  }
+
+  table{
+    width: 100%;
+  }
+
+  .code{
+    text-align: center;
+  }
+
+  td{
+    padding-left: 8px;
+  }

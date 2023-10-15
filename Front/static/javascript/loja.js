@@ -1,9 +1,12 @@
-window.onload = function() {
+window.onload = function(){
+    document.getElementById("create").addEventListener("click", Create);
+
     List();
 }
+    
+function Create(event){
+    event.preventDefault();
 
-
-function Create(){
     let productName = document.getElementById("product-name").value;
     let productNote = document.getElementById("product-note").value;
     let quantity = document.getElementById("quantity").value;
@@ -21,7 +24,7 @@ function Create(){
 
     let token = JSON.parse(localStorage.getItem("token"))
 
-    fetch("http://localhost:5255/v1/products", {
+    fetch("http://www.isteak.somee.com/v1/products", {
         method: "POST",
         headers: {
             "Authorization": "Bearer "+ token,
@@ -31,13 +34,11 @@ function Create(){
     })
     .then(
         (res) => {
-            console.log(res.json())
-    
+            window.location.reload();
             if(res.status == 401){
                 window.location.replace("../login/")
             }
         }
-        
     )
     .catch(
         (err) => {
@@ -46,9 +47,10 @@ function Create(){
         }
     );
 
+
     var allInputs = document.querySelectorAll('input');
     allInputs.forEach(singleInput => singleInput.value = '');
-    reloadPage();
+    
 }
 
 function List(){
@@ -74,8 +76,7 @@ function List(){
             let note = tr.insertCell();
             let price = tr.insertCell();
             let type = tr.insertCell();
-
-            console.log(item);
+            let actions = tr.insertCell();
             
             id.innerText = item.id;
             code.innerText = item.code;
@@ -85,6 +86,16 @@ function List(){
             type.innerText = item.statusName;
 
             id.classList.add("id");
+            code.classList.add("code");
+
+            let imgEdit = document.createElement("img");
+            imgEdit.src = "../../static/images/pencil.svg";
+
+            let imgDelete = document.createElement("img");
+            imgDelete.src = "../../static/images/trash.svg";
+
+            actions.appendChild(imgEdit);
+            actions.appendChild(imgDelete);
         })
     })
 }
@@ -105,7 +116,9 @@ function SetCode(statusName){
     }
 }
 
-function reloadPage(){
-    window.location.reload();
-} 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+
    

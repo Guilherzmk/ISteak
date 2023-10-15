@@ -17,7 +17,7 @@ window.onload = function(){
             email: accessKey
         }
 
-        fetch("http://localhost:5255/v1/sign-up", {
+        fetch("http://www.isteak.somee.com/v1/sign-up", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json"

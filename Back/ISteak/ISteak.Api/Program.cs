@@ -1,13 +1,19 @@
 ﻿using ISteak.Api;
+using ISteak.Core.Addresses;
 using ISteak.Core.Customer;
 using ISteak.Core.Products;
+using ISteak.Core.Stores;
 using ISteak.Core.User;
+using ISteak.Repositories.Addresses;
 using ISteak.Repositories.Customers;
 using ISteak.Repositories.Products;
 using ISteak.Repositories.Shared.Sql;
+using ISteak.Repositories.Stores;
 using ISteak.Repositories.Users;
+using ISteak.Services.Addresses;
 using ISteak.Services.Customers;
 using ISteak.Services.Products;
+using ISteak.Services.Stores;
 using ISteak.Services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -58,11 +64,14 @@ builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddTransient<SqlConnectionProvider>(_ => new SqlConnectionProvider("workstation id=ISteakDb.mssql.somee.com;packet size=4096;user id=Guilherzmk_SQLLogin_1;pwd=7ukhyzaowk;data source=ISteakDb.mssql.somee.com;persist security info=False;initial catalog=ISteakDb"));
 
-
+builder.Services.AddTransient<IAddressRepository, AddressRepository>();
+builder.Services.AddTransient<IStoreRepository, StoreRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
+builder.Services.AddTransient<IAddressService, AddressService>();
+builder.Services.AddTransient<IStoreService, StoreService>();
 builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IProductService, ProductService>();

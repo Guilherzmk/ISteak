@@ -13,23 +13,7 @@
 
   <style>
     /* Estilizando os rótulos para ficarem lado a lado com espaçamento */
-    #content-table thead tr {
-      font-weight: bold;
-      background-color: lightgray;
-      /* Cor de fundo para destaque */
-    }
-
-    #content-table thead tr th {
-      padding: 10px 20px;
-      /* Espaçamento interno */
-      border-right: 1px solid black;
-      /* Adicionando borda à direita */
-    }
-
-    #content-table thead tr th:last-child {
-      border-right: none;
-      /* Removendo borda à direita do último elemento */
-    }
+    
   </style>
 </head>
 
@@ -41,7 +25,7 @@
         style=" border: 2px solid black; box-shadow: none;">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#"
+      <a class="navbar-brand" href="../dashboard/"
         style="font-family: 'Times New Roman', Times, serif; font-size: x-large;">iSteak</a>
       <div style="background-color: #F04242;" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
@@ -59,9 +43,9 @@
                 <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="../loja/"><ion-icon name="storefront-outline"></ion-icon>  Loja</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="../pedidos/"><ion-icon name="paper-plane-outline"></ion-icon> Pedidos </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="../estatistica/"><ion-icon name="bar-chart-outline"></ion-icon>  Estatísticas</a>
                 </li>
@@ -88,9 +72,7 @@
   </button>
   
 </div>
- <div class="icon-filter">
-  <ion-icon  name="filter-outline"></ion-icon>
- </div>
+
   <!-- Modal -->
   <div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -147,33 +129,32 @@
           </div>
             <div class="modal-footer">
               <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary" onclick="Create(); reloadPage()">Salvar</button>
+              <button type="submit" id="create" class="btn btn-primary">Salvar</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-
-    <section>
-      <header style="padding-left: 30px;">Lista de Produtos</header>
-      <div>
-        <table id="content-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Código</th>
-              <th>Nome</th>
-              <th>Anotações</th>
-              <th>Preço</th>
-              <th>Tipo</th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </div>
+  <section>
+    <div>
+      <table id="content-table">
+        <thead>
+          <tr>
+            <th style="display: none;">ID</th>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Anotações</th>
+            <th>Preço</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
