@@ -40,9 +40,10 @@ namespace ISteak.Api.Controllers
 
         [HttpPost]
         [Route("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] Product updateParams)
         {
-            var customer = await _productService.UpdateAsync(id, updateParams);
+            var product = await _productService.UpdateAsync(id, updateParams);
 
             if (_productService.HasErrors())
             {
@@ -55,7 +56,7 @@ namespace ISteak.Api.Controllers
                 throw new Exception(sb.ToString());
             }
 
-            return this.Ok(customer);
+            return this.Ok(product);
         }
 
         [HttpGet]

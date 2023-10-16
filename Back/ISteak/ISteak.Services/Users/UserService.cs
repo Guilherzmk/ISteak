@@ -1,6 +1,6 @@
 ﻿using ISteak.Commons.Results;
 using ISteak.Core.SignIns;
-using ISteak.Core.User;
+using ISteak.Core.Users;
 using ISteak.Repositories.Criptographys;
 using Microsoft.IdentityModel.Tokens;
 using System;

@@ -92,7 +92,6 @@ namespace ISteak.Repositories.Products
                 .AppendLine(" UPDATE [Product]")
                 .AppendLine(" SET")
                 .AppendLine(" [id] = @id,")
-                .AppendLine(" [code] = @code,")
                 .AppendLine(" [name] = @name,")
                 .AppendLine(" [note] = @note,")
                 .AppendLine(" [preco] = @price,")
@@ -134,9 +133,9 @@ namespace ISteak.Repositories.Products
                 var commandText = new StringBuilder()
                     .AppendLine(" UPDATE [Product]")
                     .AppendLine(" SET")
-                    .AppendLine(" [exclusionDate] = @exclusion_date,")
-                    .AppendLine(" [recordStatus] = @record_status_code,")
-                    .AppendLine(" [recordStatusName] = @record_status_name")
+                    .AppendLine(" [exclusion_date] = @exclusion_date,")
+                    .AppendLine(" [record_status] = @record_status_code,")
+                    .AppendLine(" [record_status_name] = @record_status_name")
                     .AppendLine(" WHERE [id] = @id");
 
                 var connection = new SqlConnection(_connectionProvider.ConnectionString);
@@ -285,6 +284,8 @@ namespace ISteak.Repositories.Products
             cm.Parameters.Add(new SqlParameter("@exclusion_date", product.ExclusionDate.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@exclusion_user_id", product.ExclusionUserId.GetDbValue()));
             cm.Parameters.Add(new SqlParameter("@exclusion_user_name", product.ExclusionUserName.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@record_status", product.RecordStatus.GetDbValue()));
+            cm.Parameters.Add(new SqlParameter("@record_status_name", product.RecordStatusName.GetDbValue()));
         }
 
         private static Product LoadDataReader(SqlDataReader dataReader)

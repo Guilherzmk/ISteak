@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ISteak.Commons.Results;
 using ISteak.Core.Customer;
-
+using ISteak.Core.Users;
 
 namespace ISteak.Services.Customers
 {
@@ -56,6 +56,13 @@ namespace ISteak.Services.Customers
         public async Task<List<Customer>> GetAllAsync()
         {
             var model = await _customerRepository.GetAllAsync();
+
+            return model;
+        }
+
+        public async Task<List<User>> GetAllUserAsync()
+        {
+            var model = await _customerRepository.GetAllUserAsync();
 
             return model;
         }

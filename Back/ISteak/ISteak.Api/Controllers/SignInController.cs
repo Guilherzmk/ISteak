@@ -1,5 +1,5 @@
 ﻿using ISteak.Core.SignIns;
-using ISteak.Core.User;
+using ISteak.Core.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ISteak.Core.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace ISteak.Core.Customer
         Task<Customer> UpdateAsync(Customer customer);
         Task<long> DeleteAsync(Guid id);
         Task<Customer> GetAsync(Guid id);
-        Task<List<Customer>> GetAllAsync();  
+        Task<List<Customer>> GetAllAsync();
+        Task<List<User>> GetAllUserAsync();
     }
 }

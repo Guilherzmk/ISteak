@@ -3,7 +3,7 @@ using ISteak.Core.Addresses;
 using ISteak.Core.Customer;
 using ISteak.Core.Products;
 using ISteak.Core.Stores;
-using ISteak.Core.User;
+using ISteak.Core.Users;
 using ISteak.Repositories.Addresses;
 using ISteak.Repositories.Customers;
 using ISteak.Repositories.Products;

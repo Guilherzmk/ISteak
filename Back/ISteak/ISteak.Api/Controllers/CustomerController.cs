@@ -1,5 +1,6 @@
 ﻿using ISteak.Core.Customer;
 using ISteak.Services.Customers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -120,6 +121,27 @@ namespace ISteak.Api.Controllers
 
             return this.Ok();
 
+        }
+
+        [HttpGet]
+        [Route("/v1/users")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAllUserAsync()
+        {
+            var users = await _customerService.GetAllUserAsync();
+
+            if (_customerService.HasErrors())
+            {
+                var sb = new StringBuilder();
+                foreach (var error in _customerService.Errors)
+                {
+                    sb.AppendLine(error.Text);
+                }
+                return BadRequest();
+                throw new Exception(sb.ToString());
+            }
+
+            return this.Ok(users);
         }
 
     }

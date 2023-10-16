@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ISteak.Core.User
+namespace ISteak.Core.Users
 {
     public interface IUserService : IResultService
     {

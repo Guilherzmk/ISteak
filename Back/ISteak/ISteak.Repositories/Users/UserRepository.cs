@@ -1,4 +1,4 @@
-﻿using ISteak.Core.User;
+﻿using ISteak.Core.Users;
 using ISteak.Repositories.Criptographys;
 using ISteak.Repositories.Shared.Sql;
 using System;
@@ -83,8 +83,25 @@ namespace ISteak.Repositories.Users
 
             cm.Parameters.Add(new SqlParameter("@code", InsertCode()));
             cm.Parameters.Add(new SqlParameter("@password", password));
-            cm.Parameters.Add(new SqlParameter("@profile_id", "3FA85F64-5717-4562-B3FC-2C963F66AFA6"));
-            cm.Parameters.Add(new SqlParameter("@profile_name", "Admin"));
+            if(user.ProfileId != null)
+            {
+                cm.Parameters.Add(new SqlParameter("@id", user.ProfileId.GetDbValue()));
+            }
+            else
+            {
+                cm.Parameters.Add(new SqlParameter("@profile_id", "3FA85F64-5717-4562-B3FC-2C963F66AFA6"));
+            }
+
+            if (user.ProfileName != null)
+            {
+                cm.Parameters.Add(new SqlParameter("@profile_name", user.ProfileId.GetDbValue()));
+            }
+            else
+            {
+                cm.Parameters.Add(new SqlParameter("@profile_name", "Admin"));
+            }
+
+         
             cm.Parameters.Add(new SqlParameter("@access_count", 1));
             cm.Parameters.Add(new SqlParameter("@creation_date", DateTime.UtcNow));
             cm.Parameters.Add(new SqlParameter("@creation_user_id", user.Id));
@@ -105,6 +122,7 @@ namespace ISteak.Repositories.Users
 
             return user;
         }
+
         public async Task<User> Get(string accessKey)
         {
             try

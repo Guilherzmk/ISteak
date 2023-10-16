@@ -27,7 +27,7 @@
       </button>
       <a class="navbar-brand" href="../dashboard/"
         style="font-family: 'Times New Roman', Times, serif; font-size: x-large;">iSteak</a>
-      <div style="background-color: #F04242;" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+      <div style="background-color: #F04242; z-index: 10000;" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
         <div style="color: white;" class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img width="30%" src="../../static/images/logonova.png"
@@ -49,9 +49,9 @@
                 <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="../estatistica/"><ion-icon name="bar-chart-outline"></ion-icon>  Estatísticas</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="../historico_pds/"><ion-icon name="receipt-outline"></ion-icon>  Histórico</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                   <a style="color: white;"  class="nav-link active" aria-current="page" href="../configuracoes/"><ion-icon name="settings-outline"></ion-icon>  Configurações</a>
                 </li>
@@ -128,7 +128,7 @@
               </div>
           </div>
             <div class="modal-footer">
-              <button class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancel()">Cancelar</button>
               <button type="submit" id="create" class="btn btn-primary">Salvar</button>
             </div>
           </form>
@@ -146,6 +146,7 @@
             <th>Código</th>
             <th>Nome</th>
             <th>Anotações</th>
+            <th>Quantidade</th>
             <th>Preço</th>
             <th>Tipo</th>
             <th>Ações</th>
@@ -161,5 +162,11 @@
 <script src="../../static/javascript/loja.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+<script>
+  // Função para abrir o modal
+  
+</script>
 
 </html>

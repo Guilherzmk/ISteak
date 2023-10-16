@@ -1,4 +1,5 @@
 ﻿using ISteak.Core.Customer;
+using ISteak.Core.Users;
 using ISteak.Repositories.Shared.Sql;
 using System;
 using System.Collections.Generic;
@@ -208,6 +209,33 @@ namespace ISteak.Repositories.Customers
             return list;
         }
 
+        public async Task<List<User>> GetAllUserAsync()
+        {
+            var list = new List<User>();
+
+            var commandText = new StringBuilder()
+                .AppendLine(" SELECT * FROM [User]")
+                .AppendLine(" WHERE [profile_name] = 'User'")
+                .AppendLine(" ORDER BY [code] ASC");
+
+            var connection = new SqlConnection(_connectionProvider.ConnectionString);
+            connection.Open();
+
+            var cm = connection.CreateCommand();
+
+            cm.CommandText = commandText.ToString();
+
+            var dataReader = cm.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                var user = LoadDataReaderUser(dataReader);
+                list.Add(user);
+            }
+
+            return list;
+        }
+
         private void SetParameters(Customer customer, SqlCommand cm)
         {
             cm.Parameters.Add(new SqlParameter("@id", customer.Id.GetDbValue()));
@@ -301,6 +329,36 @@ namespace ISteak.Repositories.Customers
             customer.RecordStatusName = dataReader.GetString("recordStatusName");
 
             return customer;
+        }
+
+        private static User LoadDataReaderUser(SqlDataReader dataReader)
+        {
+            var user = new User();
+
+            user.Id = dataReader.GetGuid("id");
+            user.Code = dataReader.GetInt32("code");
+            user.Name = dataReader.GetString("name");
+            user.AccessKey = dataReader.GetString("access_key");
+            user.Password = dataReader.GetString("password");
+            user.Email = dataReader.GetString("email");
+            user.Phone = dataReader.GetString("phone");
+            user.Note = dataReader.GetString("note");
+            user.ProfileId = dataReader.GetGuid("profile_id");
+            user.ProfileName = dataReader.GetString("profile_name");
+            user.AccessCount = dataReader.GetInt32("access_count");
+            user.CreationDate = dataReader.GetDateTime("creation_date");
+            user.CreationUserId = dataReader.GetGuid("creation_user_id");
+            user.CreationUserName = dataReader.GetString("creation_user_name");
+            user.ChangeDate = dataReader.GetDateTime("change_date");
+            user.ChangeUserId = dataReader.GetGuid("change_user_id");
+            user.ChangeUserName = dataReader.GetString("change_user_name");
+            user.ExclusionDate = dataReader.GetDateTime("exclusion_date");
+            user.ExclusionUserId = dataReader.GetGuid("exclusion_user_id");
+            user.ExclusionUserName = dataReader.GetString("exclusion_user_name");
+            user.RecordStatus = dataReader.GetInt32("record_status");
+            user.RecordStatusName = dataReader.GetString("record_status_name");
+
+            return user;
         }
 
     }

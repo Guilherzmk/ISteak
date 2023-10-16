@@ -11,7 +11,7 @@ namespace ISteak.Core.Products
         public static async Task<Product> UpdateAsync(this Product _this, Product product)
         {
 
-            await _this.UpdateAsync(product);
+            await _this.SetParamsAsync(product);
 
             return _this;
         }

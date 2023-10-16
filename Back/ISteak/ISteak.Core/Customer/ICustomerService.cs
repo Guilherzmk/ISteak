@@ -1,4 +1,5 @@
 ﻿using ISteak.Commons.Results;
+using ISteak.Core.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace ISteak.Core.Customer
         Task<Customer> UpdateAsync(Guid id, Customer @params);
         Task<Customer> GetAsync(Guid id);
         Task<int> DeleteAsync(Guid id);
-        Task<List<Customer>> GetAllAsync(); 
+        Task<List<Customer>> GetAllAsync();
+        Task<List<User>> GetAllUserAsync();
     }
 }
