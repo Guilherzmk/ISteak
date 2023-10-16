@@ -10,7 +10,7 @@ let nomeproduct = []
 let estoqueproduct = []
 
 //Mostrar clientes registrados
-fetch(url)
+fetch("http://www.isteak.somee.com/v1/users")
   .then(response => {
     if (!response.ok) {
       throw new Error('Erro na solicitação');
@@ -18,8 +18,7 @@ fetch(url)
     return response.json();
   })
   .then(data => {
-    const tamanhoDoArray = Object.keys(data.data).length;
-    clienttext.innerHTML = tamanhoDoArray + " Clientes";
+    clienttext.innerHTML = data.length + " Clientes";
     
   })
   .catch(error => {
@@ -48,7 +47,7 @@ fetch(url)
   })
 
 //Definir valores no arrays para o gráfico
-fetch(url)
+fetch("http://www.isteak.somee.com/v1/products")
   .then(response => {
     if (!response.ok) {
         throw new Error('Erro na solicitação');
@@ -56,11 +55,9 @@ fetch(url)
     return response.json();
   })
   .then(data => {
-    if(Array.isArray(data) && data.length > 0) {
-        data.forEach(element => {
-            nomeproduct.push(element.name)
-            estoqueproduct.push(element.quantity)
-        });
+    for (i = 0; i < data.length; i++){
+        nomeproduct.push(data[i].name)
+        estoqueproduct.push(data[i].quantity)
     }
   })
   .catch(error => {
@@ -68,7 +65,9 @@ fetch(url)
   })
 
 //Estoque do gráfico de estatística
-const ctx = document.getElementById('graph').getContext('2d');
+function xd(){
+
+  const ctx = document.getElementById('graph').getContext('2d');
 const chart = new Chart(ctx, {
   type: 'bar',
   data: {
@@ -84,4 +83,7 @@ const chart = new Chart(ctx, {
     responsive: true
   }
 });
+}
+
+setTimeout(xd, 500)
 
