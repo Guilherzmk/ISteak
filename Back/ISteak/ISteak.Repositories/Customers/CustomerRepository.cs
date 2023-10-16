@@ -236,6 +236,31 @@ namespace ISteak.Repositories.Customers
             return list;
         }
 
+        public async Task<List<Stars>> GetAllStarsAsync()
+        {
+            var list = new List<Stars>();
+
+            var commandText = new StringBuilder()
+                .AppendLine(" SELECT * FROM [Review]")
+                .AppendLine(" ORDER BY [id] ASC");
+
+            var connection = new SqlConnection(_connectionProvider.ConnectionString);
+            connection.Open();
+
+            var cm = connection.CreateCommand();
+
+            cm.CommandText = commandText.ToString();
+
+            var dataReader = cm.ExecuteReader();
+
+            while (dataReader.Read()) {
+                var star = LoadDataReaderStar(dataReader);
+                list.Add(star);
+            }
+
+            return list;
+        }
+
         private void SetParameters(Customer customer, SqlCommand cm)
         {
             cm.Parameters.Add(new SqlParameter("@id", customer.Id.GetDbValue()));
@@ -359,6 +384,16 @@ namespace ISteak.Repositories.Customers
             user.RecordStatusName = dataReader.GetString("record_status_name");
 
             return user;
+        }
+
+        private static Stars LoadDataReaderStar(SqlDataReader dataReader)
+        {
+            var star = new Stars();
+
+            star.Id = dataReader.GetInt32("id");
+            star.Star = dataReader.GetInt32("star");
+
+            return star;
         }
 
     }

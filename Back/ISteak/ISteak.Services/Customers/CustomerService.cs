@@ -67,6 +67,13 @@ namespace ISteak.Services.Customers
             return model;
         }
 
+        public async Task<List<Stars>> GetAllStarAsync()
+        {
+            var model = await _customerRepository.GetAllStarsAsync();
+
+            return model;
+        }
+
         public async Task<Customer> GetAsync(Guid id)
         {
             var customer = await this._customerRepository.GetAsync(id);

@@ -1,4 +1,5 @@
 ﻿using ISteak.Core.Customer;
+using ISteak.Core.Users;
 using ISteak.Services.Customers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -142,6 +143,27 @@ namespace ISteak.Api.Controllers
             }
 
             return this.Ok(users);
+        }
+
+        [HttpGet]
+        [Route("/v1/stars")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetAllStarAsync()
+        {
+            var stars = await _customerService.GetAllStarAsync();
+
+            if (_customerService.HasErrors())
+            {
+                var sb = new StringBuilder();
+                foreach (var error in _customerService.Errors)
+                {
+                    sb.AppendLine(error.Text);
+                }
+                return BadRequest();
+                throw new Exception(sb.ToString());
+            }
+
+            return this.Ok(stars);
         }
 
     }

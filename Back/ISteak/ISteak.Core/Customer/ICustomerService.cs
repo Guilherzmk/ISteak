@@ -16,5 +16,6 @@ namespace ISteak.Core.Customer
         Task<int> DeleteAsync(Guid id);
         Task<List<Customer>> GetAllAsync();
         Task<List<User>> GetAllUserAsync();
+        Task<List<Stars>> GetAllStarAsync();
     }
 }
