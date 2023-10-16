@@ -94,7 +94,7 @@ namespace ISteak.Repositories.Users
 
             if (user.ProfileName != null)
             {
-                cm.Parameters.Add(new SqlParameter("@profile_name", user.ProfileId.GetDbValue()));
+                cm.Parameters.Add(new SqlParameter("@profile_name", user.ProfileName.GetDbValue()));
             }
             else
             {
