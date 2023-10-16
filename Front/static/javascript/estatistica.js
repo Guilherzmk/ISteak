@@ -27,7 +27,7 @@ fetch("http://www.isteak.somee.com/v1/users")
 
 
 //Media de notas
-fetch(url)
+fetch("http://www.isteak.somee.com/v1/stars")
   .then(response => {
     if (!response.ok) {
         throw new Error('Erro na solicitação');
@@ -35,12 +35,10 @@ fetch(url)
     return response.json();
   })
   .then(data => {
-    if(Array.isArray(data) && data.length > 0) {
-        data.forEach(position => {
-            somatoria = somatorio + position.star
-        });
-        startext.innerHTML = somatorio/data.length
-    }
+        for (i = 0; i < data.length; i++) {
+          somatorio = somatorio + data[i].star;
+          startext.innerHTML = parseInt(somatorio / data.length) + "/5"
+        }
   })
   .catch(error => {
     console.error('Error:', error)
@@ -85,5 +83,5 @@ const chart = new Chart(ctx, {
 });
 }
 
-setTimeout(xd, 500)
+setTimeout(xd, 1200)
 
