@@ -76,7 +76,7 @@ function Create(event){
         price: price
     }
 
-   fetch("http://localhost:5255/v1/products/"+item.id, {
+   fetch("http://www.isteak.somee.com/v1/products"+item.id, {
     method: "POST",
     headers: {
         "Authorization": "Bearer "+ token,
@@ -95,11 +95,6 @@ function Create(event){
 
     localStorage.removeItem("product");
     }
-
-
-
-    
-    
 }
 
 function List(){
@@ -215,7 +210,7 @@ function update(item) {
 
     console.log(product.name)
 
-    fetch("http://localhost:5255/v1/products/"+product.id, {
+    fetch("http://www.isteak.somee.com/v1/products"+product.id, {
         method: "POST",
         headers: {
             "Authorization": "Bearer "+ token,
@@ -246,7 +241,7 @@ function update(item) {
 
     let token = JSON.parse(localStorage.getItem("token"));
 
-    fetch("http://localhost:5255/v1/products/"+id, {
+    fetch("http://www.isteak.somee.com/v1/products"+id, {
         method: "DELETE",
         headers: {
             "Authorization": "Bearer "+ token,

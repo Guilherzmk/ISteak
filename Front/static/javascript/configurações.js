@@ -17,7 +17,7 @@ window.onload = function() {
 get();
 
 function get(){
-    fetch("http://localhost:5255/v1/stores", {
+    fetch("http://www.isteak.somee.com/v1/stores", {
         method: "GET"  
     })
     .then((res) => {
@@ -38,7 +38,7 @@ function get(){
         console.error(error);
     });
 
-    fetch("http://localhost:5255/v1/addresses", {
+    fetch("http://www.isteak.somee.com/v1/addresses", {
         method: "GET"
     })
     .then((res) => {
@@ -93,7 +93,7 @@ function update(){
     }
 
 
-    fetch("http://localhost:5255/v1/stores", {
+    fetch("http://www.isteak.somee.com/v1/stores", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -109,7 +109,7 @@ function update(){
         }
     )
 
-    fetch("http://localhost:5255/v1/addresses", {
+    fetch("http://www.isteak.somee.com/v1/addresses", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
